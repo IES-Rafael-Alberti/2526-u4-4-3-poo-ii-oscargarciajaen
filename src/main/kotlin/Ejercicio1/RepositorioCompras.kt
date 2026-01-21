@@ -1,4 +1,4 @@
-package `4`.`6`
+package Ejercicio1
 
 class RepositorioCompras {
 

@@ -1,4 +1,4 @@
-package `4`.`6`
+package Ejercicio1
 
 fun main(){
     val calleFlores = Domicilio("Calle Las Flores", 355)
