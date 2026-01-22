@@ -18,7 +18,7 @@ fun main(){
         println("No tiene deudas")
     }
 
-    Cuenta.transferencia( cuenta2, cuenta1)
+    Cuenta.transferencia( josemi, josemi, 234567, 123456, 300)
 
     println(josemi)
 }

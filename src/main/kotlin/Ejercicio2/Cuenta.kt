@@ -31,13 +31,32 @@ class Cuenta(val numeroCuenta: Int, saldoDisponible: Int) {
             return morosa
         }
 
-        fun transferencia(cuentaA: Cuenta, cuentaB: Cuenta): Boolean{
+        fun transferencia(personaA: Persona, personaB: Persona, idCuentaA: Int, idCuentaB: Int, cantidad: Int): Boolean{
             var transferenciaHecha = false
-            if (cuentaB.saldo > 0){
-                cuentaA.saldo += cuentaB.saldo
-                cuentaB.saldo = 0
+            var cuentaA: Cuenta? = null
+            var cuentaB: Cuenta? = null
+            for(i in personaA.cuentasASuNombre){
+                if(i != null){
+                    if (i.numeroCuenta == idCuentaA){
+                        cuentaA = i
+                    }
+                }
+            }
+
+            for(i in personaB.cuentasASuNombre){
+                if(i != null){
+                    if (i.numeroCuenta == idCuentaB){
+                        cuentaB = i
+                    }
+                }
+            }
+
+            if (cuentaA != null && cuentaB != null){
+                cuentaA?.saldo += cantidad
+                cuentaB?.saldo -= cantidad
                 transferenciaHecha = true
             }
+
             return transferenciaHecha
         }
     }
